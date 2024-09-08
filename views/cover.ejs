@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/header') %>
+    <title>Home</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #CDE8E5;
+        }
+        .cover_page {
+            margin-top: 70px;
+            text-align: center;
+        }
+        .cover_page img {
+            height: 60vh;
+            width: 40vw;
+            border-radius: 20px;
+            box-shadow: 5px 3px 8px #989898;
+        }
+    </style>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+    <div class="container">
+        <div class="cover_page">
+            <img src="/images/logo.png" alt="Logo">
+        </div>
+    </div>
+    <%- include('./partials/scripts') %>
+</body>
+</html>

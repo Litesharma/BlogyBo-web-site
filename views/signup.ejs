@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/header') %>
+    <title>Signup</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #CDE8E5;
+        }
+        .container {
+            margin-top: 50px;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .form-label {
+            color: #CDE8E5;
+        }
+        .form-control {
+            background-color: #444;
+            color: #CDE8E5;
+            border: 1px solid #555;
+        }
+        .btn-primary {
+            background-color: #007BFF;
+            border-color: #007BFF;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+        .form-text {
+            color: #CDE8E5;
+        }
+    </style>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+    <div class="container">
+        <form method="post" action="/signup">
+            <div class="mb-3">
+                <label for="exampleInputName1" class="form-label">Name</label>
+                <input name="fullName" type="text" class="form-control" id="exampleInputName1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <%- include('./partials/scripts') %>
+</body>
+</html>

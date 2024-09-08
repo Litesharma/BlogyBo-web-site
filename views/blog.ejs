@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/header') %>
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0e0e0e; /* Dark background */
+            color: #eee; /* Light text */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin: 60px auto;
+            width: 60vw;
+            background: #444; /* Slightly lighter background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Darker shadow */
+        }
+        .title {
+            margin-bottom: 20px;
+        }
+        .title input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #555; /* Slightly lighter border */
+            border-radius: 4px;
+            font-size: 24px;
+            box-sizing: border-box;
+            background-color: #666; /* Medium dark background */
+            color: #eee; /* Light text */
+            caret-color: white; /* Cursor color */
+        }
+        .title input::placeholder {
+            color: #bbb; /* Placeholder color */
+        }
+        .body textarea {
+            width: 100%;
+            height: 300px;
+            padding: 15px;
+            border: 1px solid #555; /* Slightly lighter border */
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+            resize: vertical; /* Allows vertical resizing */
+            background-color: #666; /* Medium dark background */
+            color: #eee; /* Light text */
+            caret-color: white; /* Cursor color */
+        }
+        .body textarea::placeholder {
+            color: #bbb; /* Placeholder color */
+        }
+        .image-upload {
+            margin-bottom: 20px;
+        }
+        .image-upload input {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #555; /* Slightly lighter border */
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+            background-color: #666; /* Medium dark background */
+            color: #eee; /* Light text */
+        }
+        .image-upload input::placeholder {
+            color: #bbb; /* Placeholder color */
+        }
+        .submit-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .submit-button button {
+            padding: 15px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            background-color: #5cb85c; /* Green button */
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth hover effect */
+        }
+        .submit-button button:hover {
+            background-color: #4cae4c; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+    <div class="container">
+        <form action="/blog" method="post" enctype="multipart/form-data">
+            <div class="title">
+                <input type="text" id="title" name="title" placeholder="Title">
+            </div>
+            <div class="body">
+                <label for="body"></label>
+                <textarea id="body" name="body" placeholder="Write your blog here..."></textarea>
+            </div>
+            <div class="image-upload">
+                <label for="coverImgUrl">Upload Cover Image</label>
+                <input type="file" id="coverImgUrl" name="coverImgUrl" accept="image/*">
+            </div>
+            <div class="submit-button">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <%- include('./partials/scripts') %>
+</body>
+</html>

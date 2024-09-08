@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/header') %>
+    <title>Home</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #CDE8E5;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin: 25px 10px;
+        }
+        .card {
+            width: 18rem;
+            background-color: #333;
+            color: #CDE8E5;
+            cursor: pointer;
+        }
+        .card img {
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+    <div class="container">
+        <% blogs.forEach(blog => { %>
+            <div class="card">
+                <img src="<%= blog.coverImgUrl %>" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><%= blog.title %></h5>
+                    <p class="card-text">
+                        <%= blog.body.length > 100 ? blog.body.substring(0, 100) + '...' : blog.body %>
+                    </p>
+                    <a href="/<%= blog._id %>" class="btn btn-primary">View</a>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+    <%- include('./partials/scripts') %>
+</body>
+</html>
